@@ -1,13 +1,51 @@
 .content {
     max-width: 1850px;
-    margin: auto 100px;
+    margin: auto 200px;
 
     .header {
-        .header-elements {
-            button {
-                border: none;
-                background-color: #ffffff;
+        margin: 20px 0;
+        height: 50px;
+        border-bottom: 1px solid rgba(130, 130, 130, 0.3);
+
+        .row {
+            display: block ruby;
+
+            .col-lg-6:nth-child(1) p {
+                font-size: 20px;
+            }
+
+            .col-lg-6:nth-child(2) {
+                text-align: right;
+
+                button.log-in {
+                    border: none;
+                    background-color: #ffffff;
+                }
             }
         }
+    }
+
+    .aside {
+        width: 400px;
+        margin-top: 50px;
+        border: 1px solid rgba(130, 130, 130, 0.3);
+        border-radius: 15px;
+        padding: 20px;
+
+        h5 {
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+
+            li {
+                padding: 5px 0;
+                color: #82868a;
+            }
+        }
+
     }
 }
