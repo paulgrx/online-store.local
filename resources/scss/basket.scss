@@ -1,0 +1,22 @@
+.content {
+    max-width: 1850px;
+    margin: 200px 300px;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .basket {
+        border-top: 1px solid rgba(130,130,130,.3);
+        border-bottom: 1px solid rgba(130,130,130,.3);
+        border-radius: 15px;
+
+        .row#list {
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
+}
+

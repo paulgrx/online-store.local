@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () {return view('welcome');
 });
 Route::get('/', function () {return view('index');});
+Route::get('/product', [App\Http\Controllers\ProductController::class, 'viewproduct'])->name('product');
+Route::get('/basket', [App\Http\Controllers\BasketController::class, 'viewbasket'])->name('basket');

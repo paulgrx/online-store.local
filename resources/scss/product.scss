@@ -1,0 +1,163 @@
+.content {
+    max-width: 1850px;
+    margin: auto 200px;
+
+    .header {
+        margin: 20px 0;
+        height: 50px;
+        border-bottom: 1px solid rgba(130, 130, 130, 0.3);
+        display: list-item;
+        list-style-type: none;
+
+        .row {
+            .col-lg-6:nth-child(1) p {
+                font-size: 20px;
+            }
+
+            .col-lg-6:nth-child(2) {
+                text-align: right;
+
+                button.log-in {
+                    border: none;
+                    background-color: #ffffff;
+                }
+            }
+        }
+    }
+
+    .main-content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+
+        .aside {
+            padding: 0;
+
+            .aside-in {
+                width: 333px;
+                border: 1px solid rgba(130, 130, 130, 0.3);
+                border-radius: 15px;
+                padding: 20px;
+
+                h2 {
+                    margin-bottom: 2.5rem;
+                }
+
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style-type: none;
+
+                    li {
+                        padding: 5px 0;
+                        color: #82868a;
+                        font-size: 15px;
+
+                        a:hover {
+                            text-decoration: none;
+                        }
+                    }
+
+                    li.category {
+                        padding: 5px 0;
+                        color: #82868a;
+                        font-size: 15px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        button.deploy-list {
+                            border: none;
+                            color: black;
+                            background-color: white;
+                        }
+                    }
+
+                    ul.subcategories {
+                        display: none;
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+
+        .product-view {
+            .row {
+                justify-content: space-between;
+            }
+            .col-md-5 {
+                .product-photo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 75%;
+                    }
+                }
+            }
+
+            .col-md-5 {
+                .description {
+                    border-bottom: 3px solid rgba(130,130,130,.3);
+                    padding-bottom: 75px;
+
+                    h2 {
+                        font-size: 3rem;
+                        margin-bottom: 30px;
+                    }
+
+                    h3 {
+                        font-size: 2rem;
+                        margin-bottom: 30px;
+                        font-weight: 700;
+                    }
+
+                    p {
+                        font-size: 15px;
+                        color: #43576b;
+                    }
+                }
+            }
+
+            .purchase {
+                margin-top: 30px;
+                float: right;
+                display: inline-flex;
+
+                .counter {
+                    display: inline-flex;
+                    align-items: center;
+                    padding: 3px 10px 3px 30px;
+                    border-radius: 35px;
+                    background-color: #ececec;
+                    margin-right: 10px;
+
+                     p {
+                         font-size: 20px;
+                         margin: 0;
+                         padding-right: 30px;
+                     }
+
+                    .arrows {
+                        display: grid;
+
+                        svg {
+                            width: 11px;
+                        }
+                    }
+                }
+
+                button.add-to-card {
+                    background-color: black;
+                    color: white;
+                    font-size: 15px;
+                    border-radius: 33px;
+                    border: none;
+                    padding: 6px 30px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
