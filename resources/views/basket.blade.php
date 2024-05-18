@@ -14,7 +14,7 @@
         <title>Basket</title>
     </head>
     <body>
-        <div class="content">
+        <div class="box">
             <h1>Koszyk</h1>
             <div class="basket">
                 <div class="row" id="list">

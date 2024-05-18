@@ -69,28 +69,26 @@
                 </div>
                 <div class="col-lg-9 products">
                     <div class="row">
-                        <a href="#" class="col-lg-12 outcome">
-                            <div class="col-sm-2">
-                                <img src="images/iq4933-5_1.jpg" alt="Photo" class="product-photo">
-                            </div>
-                            <div class="col-sm-10">
-                                <h2>Piłka adidas Pro rozmiar 5</h2>
-                                <p>Oficjalna piłka PKO Ekstraklasy na sezon 2023/24, inspirowana futbolówką, którą rozgrywane będą mecze podczas Mistrzostw Świata kobiet FIFA™.
-                                    Model stworzony z myślą o płynnej grze. adidas Oceaunz Pro wyróżnia się grafiką,
-                                    która odzwierciedla znaczenie Australii i malowniczego wybrzeża Nowej Zelandii,
-                                    a także będących źródłem życia jezior i dróg wodnych. Bezszwowa konstrukcja zapewnia przewidywalną
-                                    trajektorię lotu i odbicie. Znak jakości Quality Pro to najwyższa ocena FIFA.</p>
-                            </div>
-                            <div class="purchase">
-                                <h3>369,99 zł</h3>
-                                <button class="add-to-card" type="submit">
-                                    DODAJ DO KOSZYKA
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16" style="vertical-align: unset; margin-left: 15px;">
-                                        <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
+                        @foreach($data as $item)
+                            <a href="{{$item->url}}" class="col-lg-12 outcome">
+                                <div class="col-sm-2">
+                                    <img src="images/{{$item->image}}" alt="Photo" class="product-photo">
+                                </div>
+                                <div class="col-sm-10">
+                                    <h2>{{$item->name}}</h2>
+                                    <p>{{$item->description}}</p>
+                                </div>
+                                <div class="purchase">
+                                    <h3>{{$item->price}}</h3>
+                                    <button class="add-to-card" type="submit">
+                                        DODAJ DO KOSZYKA
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16" style="vertical-align: unset; margin-left: 15px;">
+                                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </a>
+                        @endforeach
                         <a href="#" class="col-lg-12 outcome">
                             <div class="col-sm-2">
                                 <img src="images/ie1802_16.webp" alt="Photo" class="product-photo">
@@ -132,6 +130,7 @@
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </body>
