@@ -15,11 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('price');
-            $table->string('description');
+            $table->text('text');
             $table->string('image');
             $table->string('category');
-            $table->string('url');
-
             $table->timestamps();
         });
     }

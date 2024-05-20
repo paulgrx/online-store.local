@@ -70,13 +70,13 @@
                 <div class="col-lg-9 products">
                     <div class="row">
                         @foreach($data as $item)
-                            <a href="{{$item->url}}" class="col-lg-12 outcome">
+                            <a href="{{route('product', ['id' => $item->id])}}" class="col-lg-12 outcome">
                                 <div class="col-sm-2">
                                     <img src="images/{{$item->image}}" alt="Photo" class="product-photo">
                                 </div>
                                 <div class="col-sm-10">
                                     <h2>{{$item->name}}</h2>
-                                    <p>{{$item->description}}</p>
+                                    <p>{{$item->text}}</p>
                                 </div>
                                 <div class="purchase">
                                     <h3>{{$item->price}}</h3>
@@ -89,45 +89,6 @@
                                 </div>
                             </a>
                         @endforeach
-                        <a href="#" class="col-lg-12 outcome">
-                            <div class="col-sm-2">
-                                <img src="images/ie1802_16.webp" alt="Photo" class="product-photo">
-                            </div>
-                            <div class="col-sm-10">
-                                <h2>Korki adidas Predator Elite FG </h2>
-                                <p>Powitaj nowe buty Predator 24 Elite FG, kolejny uwielbiany model
-                                    z kolekcji inspirowanej piękną grą. Buty Predator stworzone we współpracy z profesjonalnymi piłkarzami wykorzystują nowe sposoby poprawy Twojej wydajności na naturalnej nawierzchni. Ruszaj na boisko w dobrym stylu i przygotuj się, by przejąć kontrolę nad grą.</p>
-                            </div>
-                            <div class="purchase">
-                                <h3>974,99 zł</h3>
-                                <button class="add-to-card" type="submit">
-                                    DODAJ DO KOSZYKA
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16" style="vertical-align: unset; margin-left: 15px;">
-                                        <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <a href="#" class="col-lg-12 outcome">
-                            <div class="col-sm-2">
-                                <img src="images/ia9154_1.webp  " alt="Photo" class="product-photo">
-                            </div>
-                            <div class="col-sm-10">
-                                <h2>Koszulka adidas Tabela 23 Junior </h2>
-                                <p>
-                                    Zawsze dawaj z siebie wszystko. Ta młodzieżowa koszulka piłkarska adidas prezentuje prosty styl za sprawą charakterystycznych 3 pasków i logo z 3 paskami. Pochłaniający wilgoć AEROREADY i rękawy z siateczki zapewnią Ci suchy komfort przez cały mecz.
-                                    Ten produkt został wykonany w 100% z materiałów pochodzących z recyklingu i stanowi tylko jedno z rozwiązań, które pomogą wyeliminować zanieczyszczenie plastikiem.</p>
-                            </div>
-                            <div class="purchase">
-                                <h3>67,99 zł</h3>
-                                <button class="add-to-card" type="submit">
-                                    DODAJ DO KOSZYKA
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16" style="vertical-align: unset; margin-left: 15px;">
-                                        <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
                     </div>
                 </div>
 

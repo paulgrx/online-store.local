@@ -71,22 +71,16 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="product-photo">
-                        <img src="images/iq4933-5_1.jpg" alt="Photo">
+                        <img src="images/{{$product->image}}" alt="Photo">
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="description">
-                        <h2>Piłka adidas Pro rozmiar 5</h2>
-                        <h3>369,99 zł</h3>
-                        <p>Oficjalna piłka PKO Ekstraklasy na sezon 2023/24, inspirowana futbolówką,
-                            którą rozgrywane będą mecze podczas Mistrzostw Świata kobiet FIFA™.
-                            Model stworzony z myślą o płynnej grze. adidas Oceaunz Pro wyróżnia się grafiką,
-                            która odzwierciedla znaczenie Australii i malowniczego wybrzeża Nowej Zelandii,
-                            a także będących źródłem życia jezior i dróg wodnych. Bezszwowa konstrukcja zapewnia przewidywalną
-                            trajektorię lotu i odbicie. Znak jakości Quality Pro to najwyższa ocena FIFA.</p>
+                        <h2>{{$product->name}}</h2>
+                        <h3>{{$product->price}}</h3>
+                        <p>{{$product->text}}</p>
                         <br>
-                        <p>Oficjalna piłka PKO Ekstraklasy na sezon 2023/24, inspirowana futbolówką,
-                            którą rozgrywane będą mecze podczas Mistrzostw Świata kobiet FIFA™.</p>
+                        <p>{{$product->text}}</p>
                     </div>
                     <div class="purchase">
                         <div class="counter">

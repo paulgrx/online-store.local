@@ -18,7 +18,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {return view('welcome');
 });
 /*Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('/');*/
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'viewproduct'])->name('product');
 Route::get('/basket', [App\Http\Controllers\BasketController::class, 'viewbasket'])->name('basket');
 Route::get('/form', [App\Http\Controllers\FormController::class, 'form'])->name('form');

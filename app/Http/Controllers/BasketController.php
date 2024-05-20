@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
 
-class BasketController extends Controller
+class BasketController extends BaseController
 {
-    public function viewbasket() {
+    public function viewbasket()
+    {
         return view('basket');
     }
 }
