@@ -35,38 +35,7 @@
     </div>
 
     <div class="main-content">
-        <div class=" col-lg-3 aside">
-            <div class="aside-in">
-                <h2>Kategorie</h2>
-                <ul>
-                    <li><a  href="#" class="nav-link active" aria-current="page">Buty</a></li>
-                    <li><a  href="#" class="nav-link active" aria-current="page">Piłki</a></li>
-                    <li><a  href="#" class="nav-link active" aria-current="page">Lifestyle</a></li>
-                    <li class="category">
-                        <a  href="#" class="nav-link active" aria-current="page">Odzież piłkarska</a>
-                        <button class="deploy-list" onclick="toggleSubcategories('odziez-pilkarska')">
-                            <span>+</span>
-                        </button>
-                    </li>
-                    <ul class="subcategories" id="odziez-pilkarska">
-                        <li><a  href="#" class="nav-link active" aria-current="page">Koszulki</a></li>
-                        <li><a  href="#" class="nav-link active" aria-current="page">Spodenki</a></li>
-                        <li><a  href="#" class="nav-link active" aria-current="page">Bluzy</a></li>
-                        <li><a  href="#" class="nav-link active" aria-current="page">Skarpety</a></li>
-                    </ul>
-                    <li class="category">
-                        <a  href="#" class="nav-link active" aria-current="page">Akcesoria</a>
-                        <button class="deploy-list" onclick="toggleSubcategories('akcesoria')">
-                            <span>+</span>
-                        </button>
-                    </li>
-                    <ul class="subcategories" id="akcesoria">
-                        <li><a  href="#" class="nav-link active" aria-current="page">Torby i plecaki</a></li>
-                        <li><a  href="#" class="nav-link active" aria-current="page">Do treningu</a></li>
-                    </ul>
-                </ul>
-            </div>
-        </div>
+        @include('sidebar')
         <div class="col-lg-9 product-view">
             <div class="row">
                 <div class="col-md-5">

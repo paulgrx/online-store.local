@@ -13,17 +13,7 @@ return new class extends Migration
     {
         Schema::create('category', function (Blueprint $table) {
             $table->id();
-            $table->string('Buty');
-            $table->string('Piłki');
-            $table->string('Lifestyle');
-            $table->string('Odzież piłkarska');
-            $table->string('Koszulki');
-            $table->string('Spodenki');
-            $table->string('Bluzy');
-            $table->string('Skarpety');
-            $table->string('Akcesoria');
-            $table->string('Torby i plecaki');
-            $table->string('Do treningu');
+            $table->string('categories');
             $table->timestamps();
         });
     }

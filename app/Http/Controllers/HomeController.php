@@ -7,12 +7,17 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends BaseController
 {
-    public function index()
-    {
-        // Получаем данные из таблицы 'shop'
-        $data = DB::table('shop')->get();
+        public function index()
+        {
+            // Получаем данные из таблицы 'shop'
+            $data = DB::table('shop')->get();
 
-        // Передаем данные в представление 'index'
-        return view('index', ['data' => $data]);
-    }
+            $categoriesData = DB::table('category')->get()->toArray();
+
+            // Передаем данные в представление 'index'
+            return view('index', [
+                'data' => $data,
+                'categoriesData' => $categoriesData
+            ]);
+        }
 }
