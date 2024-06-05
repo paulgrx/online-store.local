@@ -16,11 +16,15 @@ class ProductController extends BaseController
         }
 
         $product = DB::table('shop')->where('id',$productId)->first();
+        $categoriesData = DB::table('categories')->get()->toArray();
 
         if (!$product) {
             return redirect()->route('home');
         }
-        return view('product',  ['product' => $product]);
+        return view('product',  [
+            'product' => $product,
+            'categoriesData' => $categoriesData]);
+
 
     }
 }

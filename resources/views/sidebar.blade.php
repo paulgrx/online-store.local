@@ -3,20 +3,7 @@
         <h2>Kategorie</h2>
         <ul>
             @foreach($categoriesData as $category)
-                <li><a  href="{{env('APP_URL')}}/search?category={{$category->categories}}" class="nav-link active" aria-current="page">{{$category->categories}}</a></li>
-               {{-- <li>
-                    <a href="#" class="nav-link active" aria-current="page">{{ $category }}</a>
-                    @if(isset($subcategories[$category]))
-                        <button class="deploy-list" onclick="toggleSubcategories('{{ $category }}')">
-                            <span>+</span>
-                        </button>
-                        <ul class="subcategories" id="{{ $category }}">
-                            @foreach($subcategories[$category] as $subcategory)
-                                <li><a href="#" class="nav-link active" aria-current="page">{{ $subcategory }}</a></li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>--}}
+                <li><a  href="{{env('APP_URL')}}/search?category={{$category->id}}" class="nav-link active" aria-current="page">{{$category->categories}}</a></li>
             @endforeach
         </ul>
     </div>

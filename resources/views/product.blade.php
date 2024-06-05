@@ -35,7 +35,7 @@
     </div>
 
     <div class="main-content">
-        @include('sidebar')
+        @include('sidebar', ['categoriesData' => $categoriesData])
         <div class="col-lg-9 product-view">
             <div class="row">
                 <div class="col-md-5">

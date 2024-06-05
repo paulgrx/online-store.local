@@ -35,7 +35,6 @@
             </div>
 
             <div class="main-content">
-                {{--@each('sidebar', $categoriesData, 'categoriesData')--}}
                 @include('sidebar', ['categoriesData' => $categoriesData])
                 <div class="col-lg-9 products">
                     <div class="row">
