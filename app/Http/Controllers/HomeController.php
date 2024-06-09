@@ -30,11 +30,16 @@ class HomeController extends BaseController
             }
 
             $data = DB::table('shop')
-                ->leftJoin('product_categories', 'shop.id', '=', 'product_categories.prodictId')
-                ->where('product_categories.categoryId', 1)
+                ->leftJoin('product_categories', 'shop.id', '=', 'product_categories.productId')
+                ->where('product_categories.categoryId', $categoryId)
                 ->get();
 
-            print_r($data);
+            $categoriesData = DB::table('categories')->get()->toArray();
+
+            return view('index', [
+                'data' => $data,
+                'categoriesData' => $categoriesData
+            ]);
 
         }
 
