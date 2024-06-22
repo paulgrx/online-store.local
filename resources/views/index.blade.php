@@ -37,6 +37,16 @@
             <div class="main-content">
                 @include('sidebar', ['categoriesData' => $categoriesData])
                 <div class="col-lg-9 products">
+                    <div class="col-lg-12">
+                        <div class="col-md-3 sort-menu">
+                                <p>Sortowanie: <span>Domyślnie</span> </p>
+                                <ul>
+                                    <li><a  href="{{env('APP_URL')}}/" class="nav-link active" aria-current="page">Domyślne</a></li>
+                                    <li><a  href="{{env('APP_URL')}}/search?sort_by=asc" class="nav-link active" aria-current="page">Cena rosnąco</a></li>
+                                    <li><a  href="{{env('APP_URL')}}/search?sort_by=desc" class="nav-link active" aria-current="page">Cena malejąco</a></li>
+                                </ul>
+                        </div>
+                    </div>
                     <div class="row">
                         @foreach($data as $item)
                             <a href="{{route('product', ['id' => $item->id])}}" class="col-lg-12 outcome">
@@ -48,7 +58,7 @@
                                     <p>{{$item->text}}</p>
                                 </div>
                                 <div class="purchase">
-                                    <h3>{{$item->price}}</h3>
+                                    <h3>{{$item->price}} zł</h3>
                                     <button class="add-to-card" type="submit">
                                         DODAJ DO KOSZYKA
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16" style="vertical-align: unset; margin-left: 15px;">
