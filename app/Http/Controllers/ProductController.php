@@ -23,7 +23,9 @@ class ProductController extends BaseController
         }
         return view('product',  [
             'product' => $product,
-            'categoriesData' => $categoriesData]);
+            'categoriesData' => $categoriesData,
+            'currentCategoryId' => null,
+            'currentSortBy' => null]);
 
 
     }

@@ -12,6 +12,16 @@
         .row {
             .col-lg-6:nth-child(1) p {
                 font-size: 20px;
+
+                a {
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: none;
+                    color: #82868a;
+                }
             }
 
             .col-lg-6:nth-child(2) {

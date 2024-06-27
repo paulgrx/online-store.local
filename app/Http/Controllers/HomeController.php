@@ -15,60 +15,35 @@ class HomeController extends BaseController
             $categoriesData = DB::table('categories')->get()->toArray();
             return view('index', [
                 'data' => $data,
-                'categoriesData' => $categoriesData
+                'categoriesData' => $categoriesData,
+                'currentCategoryId' => null,
+                'currentSortBy' => null
             ]);
         }
 
         public function search(Request $request) {
-            /*$categoryId = $request->input('category');
-            if (!$categoryId) {
-                $this->view();
-            }
-            $categoryExists = DB::table('categories')->where('id', $categoryId)->first();
-            if (!$categoryExists) {
-                $this->view();
-            }
-
-            $data = DB::table('shop')
-                ->leftJoin('product_categories', 'shop.id', '=', 'product_categories.productId')
-                ->where('product_categories.categoryId', $categoryId)
-                ->get();*/
-            $categoriesData = DB::table('categories')->get()->toArray();
-
+            $categoryId = $request->input('category');
             $sortBy = $request->input('sort_by');
-            if (!$sortBy) {
-                $this->view();
+
+            $query = DB::table('shop')
+                ->leftJoin('product_categories', 'shop.id', '=', 'product_categories.productId');
+
+            if ($categoryId) {
+                $query->where('product_categories.categoryId', $categoryId);
             }
 
-            $sortByArray = ['asc', 'desc'];
-
-            if (!in_array($sortBy, $sortByArray))    {
-                $this->view();
+            if ($sortBy && in_array($sortBy, ['asc', 'desc'])) {
+                $query->orderBy('price', $sortBy);
             }
 
-            $data = DB::table('shop')
-                ->orderBy('price', $sortBy)
-                ->get();
-
-
-            /*$data = DB::table('shop')->get();*/
-
-            return view('index', [
-                'data' => $data,
-                'categoriesData' => $categoriesData
-
-            ]);
-        }
-
-
-
-        private function view()
-        {
-            $data = DB::table('shop')->get();
+            $data = $query->get();
             $categoriesData = DB::table('categories')->get()->toArray();
+
             return view('index', [
                 'data' => $data,
-                'categoriesData' => $categoriesData
+                'categoriesData' => $categoriesData,
+                'currentCategoryId' => $categoryId,
+                'currentSortBy' => $sortBy
             ]);
         }
 }

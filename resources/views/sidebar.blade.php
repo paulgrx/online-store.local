@@ -3,7 +3,11 @@
         <h2>Kategorie</h2>
         <ul>
             @foreach($categoriesData as $category)
-                <li><a  href="{{env('APP_URL')}}/search?category={{$category->id}}" class="nav-link active" aria-current="page">{{$category->categories}}</a></li>
+
+                <li>
+                    <a href="{{ url('/search?' . http_build_query(['category' => $category->id, 'sort_by' => $currentSortBy])) }}"
+                       class="nav-link {{ $currentCategoryId == $category->id ? 'active' : '' }}">{{ $category->categories}}</a>
+                </li>
             @endforeach
         </ul>
     </div>

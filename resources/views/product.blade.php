@@ -19,7 +19,7 @@
     <div class="header">
         <div class="row">
             <div class="col-lg-6">
-                <p>Sklep</p>
+                <p><a href="/">Sklep</a></p>
             </div>
             <div class="col-lg-6">
                 <button class="log-in">

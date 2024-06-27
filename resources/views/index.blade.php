@@ -19,7 +19,7 @@
             <div class="header">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>Sklep</p>
+                        <p><a href="/">Sklep</a></p>
                     </div>
                     <div class="col-lg-6">
                         <button class="log-in">
@@ -39,12 +39,12 @@
                 <div class="col-lg-9 products">
                     <div class="col-lg-12">
                         <div class="col-md-3 sort-menu">
-                                <p>Sortowanie: <span>Domyślnie</span> </p>
-                                <ul>
-                                    <li><a  href="{{env('APP_URL')}}/" class="nav-link active" aria-current="page">Domyślne</a></li>
-                                    <li><a  href="{{env('APP_URL')}}/search?sort_by=asc" class="nav-link active" aria-current="page">Cena rosnąco</a></li>
-                                    <li><a  href="{{env('APP_URL')}}/search?sort_by=desc" class="nav-link active" aria-current="page">Cena malejąco</a></li>
-                                </ul>
+                                <span>Sortowanie:</span>
+                            <select onchange="location = this.value;">
+                                <option value="{{ url('/search?' . http_build_query(['category' => $currentCategoryId, 'sort_by' => null])) }}" {{ is_null($currentSortBy) ? 'selected' : '' }}>Domyślne</option>
+                                <option value="{{ url('/search?' . http_build_query(['category' => $currentCategoryId, 'sort_by' => 'asc'])) }}" {{ $currentSortBy == 'asc' ? 'selected' : '' }}>Cena rosnąco</option>
+                                <option value="{{ url('/search?' . http_build_query(['category' => $currentCategoryId, 'sort_by' => 'desc'])) }}" {{ $currentSortBy == 'desc' ? 'selected' : '' }}>Cena malejąco</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">

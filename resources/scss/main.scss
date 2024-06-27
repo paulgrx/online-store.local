@@ -12,6 +12,16 @@
         .row {
             .col-lg-6:nth-child(1) p {
                 font-size: 20px;
+
+                a {
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: none;
+                    color: #82868a;
+                }
             }
 
             .col-lg-6:nth-child(2) {
@@ -83,77 +93,27 @@
 
         .products {
             .sort-menu {
-                position: relative;
                 float: right;
                 display: flex;
+                padding: 0;
+                justify-content: space-around;
+                align-items: center;
 
-                p {
+                span {
                     margin: 0;
                     font-size: 17px;
                     color: #5e5e5e;
                 }
 
-                ul {
-                    display: none;
-                    position: absolute;
-                    top: 20px;
-                    right: 40px;
-                    list-style-type: none;
-                    font-size: 16px;
-                    text-align: left;
-                }
-
-                &:hover {
-                    ul {
-                        display: block;
-                    }
+                select {
+                    font-size: 15px;
+                    padding: 7px 10px;
+                    border: 1px solid;
+                    border-radius: 18px;
+                    background-color: #fff;
+                    color: #5e5e5e;
                 }
             }
-
-
-
-
-
-            /*.sort-menu {
-                float: right;
-                display: flex;
-                text-align: right;
-                padding-right: 0;
-                justify-content: space-evenly;
-
-                p {
-                    margin: 0;
-                    font-size: 17px;
-                    color: #5e5e5e;
-                    padding-right: 5px;
-                }
-
-                ul {
-                    list-style-type: none;
-                    font-size: 17px;
-                    padding: 0 0 0 5px;
-                    margin: 0;
-                    overflow: hidden;
-                    height: 1.5em;
-                    transition: height 0.3s;
-
-                    li {
-                        display: none;
-                    }
-
-                    li:first-child {
-                        display: block;
-                    }
-                }
-
-                &:hover ul {
-                    height: 4.5em;
-
-                    :hover li {
-                        display: block;
-                    }
-                }
-            }*/
 
             .outcome {
                 border-bottom: 1px solid rgba(130,130,130,.2);
