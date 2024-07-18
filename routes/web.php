@@ -21,3 +21,5 @@ Route::get('/product', [App\Http\Controllers\ProductController::class, 'viewprod
 Route::get('/basket', [App\Http\Controllers\BasketController::class, 'viewbasket'])->name('basket');
 Route::get('/form', [App\Http\Controllers\FormController::class, 'form'])->name('form');
 Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('home');
+Route::post('/add-product', [App\Http\Controllers\ProductController::class, 'addProduct'])->name('add-product');
+Route::post('/remove-product', [App\Http\Controllers\BasketController::class, 'removeProduct'])->name('remove-product');

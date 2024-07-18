@@ -64,21 +64,22 @@
                 display: ruby;
                 text-align: center;
 
-                p {
-                    padding: 8px 40px;
+                input#product-quantity {
+                    border: none;
                     background-color: #ececec;
-                    border-radius: 33px;
-                    font-size: 20px;
-                    font-weight: 300;
-                    margin: 0 15px 0 0;
-
+                    text-align: center;
+                    width: 87px;
+                    font-size: 18px;
+                    border-radius: 30px;
+                    font-weight: 400;
+                    padding: 6px 6px;
                 }
 
-                .product-count {
+                /*.product-count {
                     background-color: white;
                     border: none;
                     font-size: 20px;
-                }
+                }*/
             }
 
             .final-price {
@@ -145,6 +146,11 @@
             padding: 5px 43px;
             border-radius: 30px;
             color: white;
+
+            a {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
         }
     }
 }
