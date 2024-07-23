@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-md-2 price"><p>{{$item->price}} zł</p></div>
                             <div class="col-md-2 count">
-                                <input type="number" id="product-quantity" name="quantity" min="1" max="99" step="1" value={{$item->quantity}}>
+                                <p id="product-quantity">{{$item->quantity}}</p>
                                 {{--<button class="product-count" type="submit">+</button>--}}
                             </div>
                             <div class="col-md-2 final-price"><p>{{$item->final_price}} zł</p></div>
@@ -69,11 +69,10 @@
                 </div>
             </div>
             <div class="buttons">
-                <!-- Кнопка для возврата на главную страницу -->
-                <button onclick="window.location.href='{{ route('home') }}'" class="back-button">Wróć do zakupów</button>
-
-                {{--<button class="back-button"><a href="{{route('home')}}"></a> Wróć do zakupów</button>--}}
-                <button class="order-button" type="submit"><a href="/form">Zamawiam</a></button>
+                <a href="{{route('home')}}" class="back-button-link">Wróć do zakupów</a>
+                <a href="{{route('form')}}" class="order-button-link">Zamawiam</a>
+                {{--or
+                <button onclick="window.location.href='{{ route('home') }}'" class="back-button">Wróć do zakupów</button>--}}
             </div>
         </div>
     </body>

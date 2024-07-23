@@ -26,10 +26,20 @@
 
             .col-lg-6:nth-child(2) {
                 text-align: right;
+                display: flex;
+                align-items: center;
+                justify-content: right;
 
-                button.log-in {
-                    border: none;
-                    background-color: #ffffff;
+                .navi-buttons {
+                    display: flex;
+                    gap: 20px;
+
+                    button.log-in, button.basket-logo {
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        padding: 0;
+                    }
                 }
             }
         }
