@@ -8,13 +8,13 @@
         margin-left: 20px;
     }
 
-    .form {
+    /*.form {
         margin-bottom: 20px;
 
         input#adresCheckbox {
             margin-right: 20px;
         }
-    }
+    }*/
 
     .data {
         div {
@@ -33,23 +33,26 @@
         .buttons {
             margin-top: 70px;
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
 
-            .back-button {
+            .back-button-link {
                 font-size: 18px;
                 padding: 5px 39px;
                 border: 2px solid #000;
                 background-color: #fff;
                 border-radius: 30px;
+                text-decoration: none;
+                color: #000;
             }
 
-            .order-button {
+            .order-button-link {
                 border: 2px solid #000;
                 background-color: #000;
                 font-size: 18px;
                 padding: 5px 42px;
                 border-radius: 30px;
                 color: #fff;
+                text-decoration: none;
             }
         }
 

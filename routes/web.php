@@ -18,8 +18,12 @@ use App\Http\Controllers\HomeController;
 /*Route::get('/', function () {return view('welcome');});*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'viewproduct'])->name('product');
-Route::get('/basket', [App\Http\Controllers\BasketController::class, 'viewbasket'])->name('basket');
-Route::get('/form', [App\Http\Controllers\FormController::class, 'form'])->name('form');
-Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
 Route::post('/add-product', [App\Http\Controllers\ProductController::class, 'addProduct'])->name('add-product');
+Route::get('/basket', [App\Http\Controllers\BasketController::class, 'viewbasket'])->name('basket');
 Route::post('/remove-product', [App\Http\Controllers\BasketController::class, 'removeProduct'])->name('remove-product');
+Route::get('/form', [App\Http\Controllers\FormController::class, 'form'])->name('form');
+Route::post('/submit', [App\Http\Controllers\FormController::class, 'orderSubmit'])->name('submit');
+Route::get('/form/{id}', [App\Http\Controllers\FormController::class, 'getOrderDetails'])->name('order.details');
+/*Route::get('/stripe-pay', [App\Http\Controllers\FormController::class, 'stripePay'])->name('stripe.pay');*/
+Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
+
