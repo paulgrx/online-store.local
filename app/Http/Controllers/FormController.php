@@ -66,10 +66,8 @@ class FormController extends BaseController
             return 'Order not found';
         }
 
-        // Установка ключа API
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        // Создание сессии Stripe Checkout
         $session = Session::create([
             'payment_method_types' => ['card'],
             'line_items' => [[
@@ -78,7 +76,7 @@ class FormController extends BaseController
                     'product_data' => [
                         'name' => $productsTitles
                     ],
-                    'unit_amount' => $productsPrices * 100, // сумма в центах
+                    'unit_amount' => $productsPrices * 100,
                 ],
                 'quantity' => 1,
             ]],
@@ -93,26 +91,11 @@ class FormController extends BaseController
             'status_of_payment' => 'succeeded',
         ]);
 
-        print_r(json_encode($payment->session_id));
-        die();
-
-        // Перенаправление пользователя на страницу Stripe Checkout
         return redirect($session->url, 303);
-    }
-
-    public function success(Request $request)
-    {
-        // Обработка успешной оплаты
-        $orderId = $request->input('order_id');
-        $order = Order::find($orderId);
-        $order->update(['status' => 'paid']);
-
-        return view('payment.success', compact('order'));
     }
 
     public function cancel()
     {
-        // Обработка отмены оплаты
         return view('payment.cancel');
     }
 }

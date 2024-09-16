@@ -1,0 +1,21 @@
+.container-success {
+    max-width: 1850px;
+    margin: 100px 200px 0 200px;
+
+    header {
+        text-align:  center;
+        margin-bottom: 100px;
+    }
+
+    .general {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+
+        .client-data, .shipping-data, .order-data {
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+}

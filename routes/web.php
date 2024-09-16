@@ -24,7 +24,7 @@ Route::post('/remove-product', [App\Http\Controllers\BasketController::class, 'r
 Route::get('/form', [App\Http\Controllers\FormController::class, 'form'])->name('form');
 Route::post('/submit', [App\Http\Controllers\FormController::class, 'orderSubmit'])->name('submit');
 Route::get('/form/{id}', [App\Http\Controllers\FormController::class, 'getOrderDetails'])->name('order.details');
-Route::get('/payment-success', [App\Http\Controllers\FormController::class, 'success'])->name('payment.success');
+Route::get('/payment-success', [App\Http\Controllers\SuccessPaymentController::class, 'success'])->name('payment.success');
 Route::get('/payment-cancel', [App\Http\Controllers\FormController::class, 'cancel'])->name('payment.cancel');
 Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
 

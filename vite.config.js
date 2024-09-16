@@ -9,7 +9,8 @@ export default defineConfig({
                     'resources/js/app.js',
                     'resources/scss/product.scss',
                     'resources/scss/basket.scss',
-                    'resources/scss/form.scss'
+                    'resources/scss/form.scss',
+                    'resources/scss/success.scss'
             ],
             refresh: true,
         }),
