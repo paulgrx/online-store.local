@@ -36,16 +36,13 @@
                                 </div>
                                 <div class="col-sm-6 short-description">
                                         <h2>{{$item->name}}</h2><br>
-                                        {{--<p>Rozmiar: 5</p><br>
-                                        <p>Przeznaczenie: trawa</p>--}}
                                 </div>
                             </div>
-                            <div class="col-md-2 price"><p>{{$item->price}} zł</p></div>
+                            <div class="col-md-2 price"><p>{{ number_format($item->price, 2, ',', ' ') }} zł</p></div>
                             <div class="col-md-2 count">
                                 <p id="product-quantity">{{$item->quantity}}</p>
-                                {{--<button class="product-count" type="submit">+</button>--}}
                             </div>
-                            <div class="col-md-2 final-price"><p>{{$item->final_price}} zł</p></div>
+                            <div class="col-md-2 final-price"><p>{{ number_format($item->final_price, 2, ',', ' ') }} zł</p></div>
                             <div class="col-md-1 trash-icon">
                                 <form action="{{route('remove-product') }}" method="post" class="delete-product-form">
                                     @csrf
@@ -65,14 +62,12 @@
                 <div class="summarize">
                     <div class="col-md-3 total-count"><p>{{$totalProducts}} PRODUKT(ÓW)</p></div>
                     <div class="col-md-1 total-in-words"><p>RAZEM</p></div>
-                    <div class="col-md-1 total-price"><p>{{$totalPrice}} zł</p></div>
+                    <div class="col-md-1 total-price"><p>{{ number_format($totalPrice, 2, ',', ' ') }} zł</p></div>
                 </div>
             </div>
             <div class="buttons">
                 <a href="{{route('home')}}" class="back-button-link">Wróć do zakupów</a>
                 <a href="{{route('form')}}" class="order-button-link">Zamawiam</a>
-                {{--or
-                <button onclick="window.location.href='{{ route('home') }}'" class="back-button">Wróć do zakupów</button>--}}
             </div>
         </div>
     </body>

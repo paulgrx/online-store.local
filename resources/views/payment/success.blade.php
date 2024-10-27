@@ -18,35 +18,45 @@
                 <h2>Opłata zrealizowana!</h2>
             </header>
             <div class="general">
-                <div class="row">
+                <div class="row-titles">
+                    <div class="col-lg-5">Dane zamawiającego</div>
+                    <div class="col-lg-5 order-data">Dane zamówienia</div>
+                    <div class="col-lg-2 shipping-data">Adres wysyłki</div>
+                </div>
+                <hr>
+                <div class="row-data">
                     <div class="col-lg-5 client-data">
-                        <h3>Dane zamawiającego</h3>
-                        <ol>
+                        <ul>
                             <li>{{ $ordername }}</li>
                             <li>{{ $email }}</li>
-                        </ol>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 order-data">
+                        <ul>
+                            <li>Numer zamówienia: #{{ $orderId }}</li>
+                            <li>Status płatności: {{ $paymentStatus }}</li>
+                            <li>Zamówiłeś:
+                                <ul>
+                                    @foreach($products as $product)
+                                        <li>{{$product->name}}</li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            <li>Cena: {{ $amount }}</li>
+                            <li>Typ karty: {{ $cardBrand }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 shipping-data">
+                        <ul>
+                            <li>{{ $city }}, ul. {{ $street }} {{ $nr_of_building }}</li>
+                            <li>{{$number}}</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-5 order-data">
-                    <p>Numer twojego zamówienia: #{{ $orderId }}</p>
-                    <p>Status płatności: {{ $paymentStatus }}</p>
-                    @foreach($products as $product)
-                        <li>Zamówiłeś: {{$product->name}}</li>
-                        <li>Cena: {{ $amount }}</li>
-                        <li>Typ karty: {{ $cardBrand }}</li>
-                    @endforeach
-                </div>
-                <div class="col-lg-2 shipping-data">
-                    <h3>Adres wysyłki</h3>
-                    <ol>
-                        <li>{{ $city }}, ul. {{ $street }} {{ $nr_of_building }}</li>
-                        <li>{{$number}}</li>
-                    </ol>
-                </div>
             </div>
-            <footer>
-                <button type="submit" class="return">Strona główna</button>
-            </footer>
+            <div class="button">
+                <a href="{{route('home')}}" class="back-button-link">Wróć do zakupów</a>
+            </div>
         </div>
     </body>
 </html>

@@ -20,20 +20,20 @@ class SuccessPaymentController extends BaseController
             ->select('name', 'lastname', 'street', 'nr_of_building', 'city', 'post_code', 'email', 'number')
             ->where('id', $orderId)
             ->first();
-/*!!! // do naprawy : wyswietlanie nazawy porduktów jak są 2 w kosyzky i więcej
- nie działa walidacja*/
+
         $products = DB::table('order_products')
             ->join('shop', 'order_products.product_id', '=', 'shop.id') // Объединяем по product_id
             ->where('order_products.order_id', $orderId) // Фильтр по order_id
-            ->select('shop.name', 'shop.price', 'order_products.product_count') // Выбираем нужные поля
+            ->select('shop.name', 'shop.price') // Выбираем нужные поля
             ->get();
 
+        $sessionId = DB::table('payment_data')
+            ->where('order_id', $orderId)
+            ->update(['status_of_payment' => 'opłacone']);
         $sessionId = DB::table('payment_data')->where('order_id', $orderId)->value('session_id');
         if (!$sessionId) {
-            return view('payment.cancel', ['message' => 'Session ID not found for this order']);
+            echo ('Session ID not found for this order');
         }
-
-
 
         try {
             $session = \Stripe\Checkout\Session::retrieve($sessionId);
@@ -48,7 +48,7 @@ class SuccessPaymentController extends BaseController
                 $ordername = $charge->billing_details->name;
                 $cardBrand = $charge->payment_method_details->card->brand;
             } else {
-                return view('payment.cancel', ['message' => 'No charges found in Charge object']);
+                echo view('No charges found in Charge object');
             }
 
             return view('payment.success', [
@@ -68,7 +68,7 @@ class SuccessPaymentController extends BaseController
                 'cardBrand' => $cardBrand,
             ]);
         } catch (\Exception $e) {
-            return view('payment.cancel', ['message' => 'Error while receiving data '. $e->getMessage()]);
+            echo ('Error while receiving data '. $e->getMessage());
         }
     }
 }

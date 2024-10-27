@@ -46,7 +46,7 @@
                         <div class="col-md-5">
                             <div class="description">
                                 <h2>{{$product->name}}</h2>
-                                <h3>{{$product->price}} zł</h3>
+                                <h3>{{ number_format($product->price, 2, ',', ' ') }} zł</h3>
                                 <p>{{$product->text}}</p>
                                 <br>
                                 <p>{{$product->text}}</p>

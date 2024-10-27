@@ -8,14 +8,61 @@
     }
 
     .general {
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
+        border: 1px solid rgba(130,130,130,.3);
+        border-radius: 15px;
+        margin-bottom: 100px;
 
-        .client-data, .shipping-data, .order-data {
-            li {
-                list-style-type: none;
+        .row-titles {
+            display: flex;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 25px;
+            color: #777777;
+            font-weight: 400;
+        }
+
+        hr {
+            margin: 0;
+        }
+
+        .row-data {
+            display: flex;
+            padding: 20px 0;
+
+            .client-data, .order-data, .shipping-data {
+                border-right: 1px solid rgba(130,130,130,.3);
+                display: flex;
+                justify-content: center;
+                line-height: 30px;
+
+                ul {
+                    list-style-type: none;
+                }
             }
+
+            .shipping-data {
+                border-right: none;
+            }
+        }
+
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+
+        a {
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .back-button-link {
+            border: 2px solid #000;
+            background-color: white;
+            font-size: 20px;
+            padding: 5px 35px;
+            border-radius: 30px;
+            color: #000000;
         }
     }
 }

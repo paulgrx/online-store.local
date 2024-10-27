@@ -28,10 +28,29 @@
                 text-align: right;
                 display: flex;
                 align-items: center;
-                justify-content: right;
+                justify-content: space-between;
+
+                .search-button {
+                    .search-form {
+                        display: inline-flex;
+
+                        .product-search {
+                            outline: none;
+                            border: 1px solid rgba(130,130,130,0.9);
+                            border-radius: 12px;
+                            font-size: 20px;
+                            padding-left: 10px;
+                        }
+
+                        .search-button-btn {
+                            background: none;
+                            border: none;
+                        }
+                    }
+                }
 
                 .navi-buttons {
-                    display: flex;
+                    display: inline-flex;
                     gap: 20px;
 
                     button.log-in, button.basket-logo {
@@ -102,72 +121,80 @@
         }
 
         .products {
-            .sort-menu {
-                float: right;
-                display: flex;
-                padding: 0;
-                justify-content: space-around;
-                align-items: center;
+            .col-lg-12 {
+                .sort-menu {
+                    float: right;
+                    display: flex;
+                    padding: 0;
+                    justify-content: space-around;
+                    align-items: center;
 
-                span {
-                    margin: 0;
-                    font-size: 17px;
-                    color: #5e5e5e;
-                }
+                    span {
+                        margin: 0;
+                        font-size: 17px;
+                        color: #5e5e5e;
+                    }
 
-                select {
-                    font-size: 15px;
-                    padding: 7px 10px;
-                    border: 1px solid;
-                    border-radius: 18px;
-                    background-color: #fff;
-                    color: #5e5e5e;
+                    select {
+                        font-size: 15px;
+                        padding: 7px 10px;
+                        border: 1px solid;
+                        border-radius: 18px;
+                        background-color: #fff;
+                        color: #5e5e5e;
+                    }
                 }
             }
 
-            .outcome {
-                border-bottom: 1px solid rgba(130,130,130,.2);
-                padding: 20px 0 75px 0;
-
-                .col-sm-2 {
-                    img.product-photo {
-                        width: 137px;
-                    }
-                }
-                .col-sm-10 {
-                    padding-left: 30px;
-
-                    h2 {
-                        font-size: 3rem;
-                        margin-bottom: 15px;
-                        color: #000000;
-                    }
-
-                    p {
-                        color: #82868a;
-                        font-size: 15px;
-                        margin-bottom: 3rem;
-                    }
+            .row {
+                .search-alert, .category-alert {
+                    font-size: 20px;
                 }
 
-                .purchase {
-                    float: right;
-                    display: inline-flex;
+                .outcome {
+                    border-bottom: 1px solid rgba(130,130,130,.2);
+                    padding: 20px 0 75px 0;
 
-                    h3 {
-                        font-size: 3rem;
-                        margin-right: 50px;
-                        color: #000000;
+                    .col-sm-2 {
+                        img.product-photo {
+                            width: 137px;
+                        }
+                    }
+                    .col-sm-10 {
+                        padding-left: 30px;
+
+                        h2 {
+                            font-size: 3rem;
+                            margin-bottom: 15px;
+                            color: #000000;
+                        }
+
+                        p {
+                            color: #82868a;
+                            font-size: 15px;
+                            margin-bottom: 3rem;
+                        }
                     }
 
-                    button.add-to-card {
-                        background-color: black;
-                        color: white;
-                        font-size: 15px;
-                        border-radius: 33px;
-                        border: none;
-                        padding: 0 41px;
-                        font-weight: 700;
+                    .purchase {
+                        float: right;
+                        display: inline-flex;
+
+                        h3 {
+                            font-size: 3rem;
+                            margin-right: 50px;
+                            color: #000000;
+                        }
+
+                        button.add-to-card {
+                            background-color: black;
+                            color: white;
+                            font-size: 15px;
+                            border-radius: 33px;
+                            border: none;
+                            padding: 0 41px;
+                            font-weight: 700;
+                        }
                     }
                 }
             }

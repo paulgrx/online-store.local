@@ -16,7 +16,8 @@ use App\Http\Controllers\HomeController;
 */
 
 /*Route::get('/', function () {return view('welcome');});*/
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'viewproduct'])->name('product');
 Route::post('/add-product', [App\Http\Controllers\ProductController::class, 'addProduct'])->name('add-product');
 Route::get('/basket', [App\Http\Controllers\BasketController::class, 'viewbasket'])->name('basket');
@@ -26,5 +27,6 @@ Route::post('/submit', [App\Http\Controllers\FormController::class, 'orderSubmit
 Route::get('/form/{id}', [App\Http\Controllers\FormController::class, 'getOrderDetails'])->name('order.details');
 Route::get('/payment-success', [App\Http\Controllers\SuccessPaymentController::class, 'success'])->name('payment.success');
 Route::get('/payment-cancel', [App\Http\Controllers\FormController::class, 'cancel'])->name('payment.cancel');
-Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
+
+
 

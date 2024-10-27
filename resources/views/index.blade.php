@@ -22,6 +22,16 @@
                         <p><a href="/">Sklep</a></p>
                     </div>
                     <div class="col-lg-6">
+                        <div class="search-button">
+                            <form action="{{ route('search') }}" method="get" class="search-form " role="search">
+                                    <input type="search" name="search" class="product-search col-sm-10" placeholder="Szukaj" value="{{ isset($searchQuery) ? $searchQuery : '' }}" aria-label="Szukaj">
+                                    <button type="submit" class="search-button-btn col-sm-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                        </svg>
+                                    </button>
+                            </form>
+                        </div>
                         <div class="navi-buttons">
                         <button class="log-in" onclick="location.href='{{route('form')}}'">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve" style="width: 67%; height: 32px;">
@@ -32,7 +42,7 @@
                             </svg>
                         </button>
                         <button class="basket-logo" onclick="location.href='{{route('basket')}}'">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16" style="vertical-align: unset; margin-left: 15px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16" style="                 ">
                                 <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
                             </svg>
                         </button>
@@ -55,26 +65,35 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach($data as $item)
-                            <a href="{{route('product', ['id' => $item->id])}}" class="col-lg-12 outcome">
-                                <div class="col-sm-2">
-                                    <img src="images/{{$item->image}}" alt="Photo" class="product-photo">
-                                </div>
-                                <div class="col-sm-10">
-                                    <h2>{{$item->name}}</h2>
-                                    <p>{{$item->text}}</p>
-                                </div>
-                                <div class="purchase">
-                                    <h3>{{$item->price}} zł</h3>
-                                    <button class="add-to-card" type="submit">
-                                        DODAJ DO KOSZYKA
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16" style="vertical-align: unset; margin-left: 15px;">
-                                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </a>
-                        @endforeach
+
+                        @if($data->isEmpty())
+                            @if($isSearch)
+                                <p class="search-alert">Nic nie znaleziono po twoim wyszukiwaniu: <strong>{{$searchQuery}}</strong></p>
+                            @else
+                                <p class="category-alert">W tej kategorii nie ma produktów.</p>
+                            @endif
+                        @else
+                            @foreach($data as $item)
+                                <a href="{{route('product', ['id' => $item->id])}}" class="col-lg-12 outcome">
+                                    <div class="col-sm-2">
+                                        <img src="images/{{$item->image}}" alt="Photo" class="product-photo">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <h2>{{$item->name}}</h2>
+                                        <p>{{$item->text}}</p>
+                                    </div>
+                                    <div class="purchase">
+                                        <h3>{{ number_format($item->price, 2, ',', ' ') }} zł</h3>
+                                        <button class="add-to-card" type="submit">
+                                            DODAJ DO KOSZYKA
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16" style="vertical-align: unset; margin-left: 15px;">
+                                                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </a>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
