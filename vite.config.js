@@ -10,7 +10,9 @@ export default defineConfig({
                     'resources/scss/product.scss',
                     'resources/scss/basket.scss',
                     'resources/scss/form.scss',
-                    'resources/scss/success.scss'
+                    'resources/scss/success.scss',
+                    'resources/scss/app.scss',
+                    'resources/js/app.js'
             ],
             refresh: true,
         }),
