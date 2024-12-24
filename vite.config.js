@@ -7,12 +7,11 @@ export default defineConfig({
             input: [
                     'resources/scss/app.scss',
                     'resources/js/app.js',
+                    'resources/scss/main.scss',
                     'resources/scss/product.scss',
                     'resources/scss/basket.scss',
                     'resources/scss/form.scss',
                     'resources/scss/success.scss',
-                    'resources/scss/app.scss',
-                    'resources/js/app.js'
             ],
             refresh: true,
         }),

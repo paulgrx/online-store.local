@@ -88,9 +88,13 @@
                 border: 1px solid rgba(130, 130, 130, 0.3);
                 border-radius: 15px;
                 padding: 20px;
+                margin: 0 auto 0 0;
+                max-width: 333px;
+                width: auto;
 
-                h2 {
-                    margin-bottom: 2.5rem;
+                h4 {
+                    margin-bottom: 1.5rem;
+                    text-align: center;
                 }
 
                 ul {
@@ -176,12 +180,12 @@
                         align-items: center;
                     }
 
-                    .col-sm-2 {
+                    .product-photo-grid {
                         img.product-photo {
                             width: 137px;
                         }
                     }
-                    .col-sm-10 {
+                    .product-text{
                         padding-left: 30px;
 
                         h2 {
@@ -270,6 +274,56 @@
             .aside {
                 display: none;
             }
+
+            .mobile-aside {
+                padding: 0;
+
+                .offcanvas-header {
+                    border-bottom: 1px solid rgba(130,130,130,0.3);
+
+                    .offcanvas-title {
+                        text-align: center;
+                    }
+                }
+
+                .offcanvas-body {
+                    padding: 30px 72px 0;
+
+                    .list-group {
+                        list-style-type: none;
+
+                        .nav-link {
+                            padding: 5px 0;
+                            color: #82868a;
+                        }
+                    }
+                }
+            }
+
+            .products {
+                .outcome {
+                    .product-info {
+                        .product-photo-grid {
+                            display: flex;
+                            justify-content: center;
+
+                            .product-photo {
+                                max-width: 60%;
+                            }
+                        }
+
+                        .product-text {
+                            h2 {
+                                font-size: 1.5rem;
+                            }
+
+                            p {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -321,8 +375,57 @@
                 .aside {
                     display: none;
                 }
-            }
 
+                .mobile-aside {
+                    padding: 0;
+
+                    .offcanvas-header {
+                        border-bottom: 1px solid rgba(130,130,130,0.3);
+
+                        .offcanvas-title {
+                            text-align: center;
+                        }
+                    }
+
+                    .offcanvas-body {
+                        padding: 30px 72px 0;
+
+                        .list-group {
+                            list-style-type: none;
+
+                            .nav-link {
+                                padding: 5px 0;
+                                color: #82868a;
+                            }
+                        }
+                    }
+                }
+
+                .products {
+                    .outcome {
+                        .product-info {
+                            .product-photo-grid {
+                                display: flex;
+                                justify-content: center;
+
+                                .product-photo {
+                                    max-width: 60%;
+                                }
+                            }
+
+                            .product-text {
+                                h2 {
+                                    font-size: 1.5rem;
+                                }
+                                
+                                p {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -332,8 +435,5 @@
     .content .mobile-search-button {
         display: none;
     }
-
-
-
 }
 

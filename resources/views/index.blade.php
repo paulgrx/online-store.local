@@ -8,7 +8,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-        @vite(['resources/scss/app.scss'])
+        @vite(['resources/scss/main.scss'])
 
         <title>Online Store</title>
     </head>
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <div class="main-content">
+            <div class="main-content row">
                 @include('sidebar', ['categoriesData' => $categoriesData])
                 <div class="col-lg-9 products">
                     <div class="col-lg-12">
@@ -87,12 +87,12 @@
                             @endif
                         @else
                             @foreach($data as $item)
-                                <a href="{{route('product', ['id' => $item->id])}}" class="col-lg-12 outcome">
-                                    <div class="product-info">
-                                        <div class="col-sm-2">
+                                <a href="{{route('product', ['id' => $item->id])}}" class="outcome col-lg-12 col-md-4 col-sm-6">
+                                    <div class="row product-info">
+                                        <div class="col-lg-2 product-photo-grid">
                                             <img src="images/{{$item->image}}" alt="Photo" class="product-photo">
                                         </div>
-                                        <div class="col-sm-10">
+                                        <div class="product-text col-lg-10">
                                             <h2>{{$item->name}}</h2>
                                             <p>{{$item->text}}</p>
                                         </div>
@@ -115,6 +115,23 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>document.addEventListener('DOMContentLoaded', function () {
+                const offcanvas = document.getElementById('categoriesMenu');
+                const breakpoint = 991;
+
+                function closeOffcanvasOnResize() {
+                    if (window.innerWidth > breakpoint && offcanvas.classList.contains('show')) {
+                        const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+                        if (bootstrapOffcanvas) {
+                            bootstrapOffcanvas.hide();
+                        }
+                    }
+                }
+
+                window.addEventListener('resize', closeOffcanvasOnResize);
+            });
+        </script>
 
     </body>
 </html>
