@@ -68,15 +68,13 @@
             <div class="main-content row">
                 @include('sidebar', ['categoriesData' => $categoriesData])
                 <div class="col-lg-9 products">
-                    <div class="col-lg-12">
-                        <div class="col-md-3 sort-menu">
-                                <span>Sortowanie:</span>
-                            <select onchange="location = this.value;">
-                                <option value="{{ url('/search?' . http_build_query(['category' => $currentCategoryId, 'sort_by' => null])) }}" {{ is_null($currentSortBy) ? 'selected' : '' }}>Domyślne</option>
-                                <option value="{{ url('/search?' . http_build_query(['category' => $currentCategoryId, 'sort_by' => 'asc'])) }}" {{ $currentSortBy == 'asc' ? 'selected' : '' }}>Cena rosnąco</option>
-                                <option value="{{ url('/search?' . http_build_query(['category' => $currentCategoryId, 'sort_by' => 'desc'])) }}" {{ $currentSortBy == 'desc' ? 'selected' : '' }}>Cena malejąco</option>
-                            </select>
-                        </div>
+                    <div class="<!--col-md-3--> sort-menu">
+                            <span>Sortowanie:</span>
+                        <select onchange="location = this.value;">
+                            <option value="{{ url('/search?' . http_build_query(['category' => $currentCategoryId, 'sort_by' => null])) }}" {{ is_null($currentSortBy) ? 'selected' : '' }}>Domyślne</option>
+                            <option value="{{ url('/search?' . http_build_query(['category' => $currentCategoryId, 'sort_by' => 'asc'])) }}" {{ $currentSortBy == 'asc' ? 'selected' : '' }}>Cena rosnąco</option>
+                            <option value="{{ url('/search?' . http_build_query(['category' => $currentCategoryId, 'sort_by' => 'desc'])) }}" {{ $currentSortBy == 'desc' ? 'selected' : '' }}>Cena malejąco</option>
+                        </select>
                     </div>
                     <div class="row">
                         @if($data->isEmpty())

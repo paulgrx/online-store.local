@@ -10,8 +10,12 @@
         list-style-type: none;
 
         .row {
-            .col-lg-6:nth-child(1) p {
+            align-items: center;
+            display: flex;
+
+            .col-lg-6, p {
                 font-size: 20px;
+                margin: 0;
 
                 a {
                     color: #000;
@@ -24,12 +28,22 @@
                 }
             }
 
-            .col-lg-6:nth-child(2) {
-                text-align: right;
+            .navi-buttons {
+                display: inline-flex;
+                gap: 20px;
+                justify-content: end;
 
-                button.log-in {
+                button.log-in, button.basket-logo, button.mobile-list {
+                    background: none;
                     border: none;
-                    background-color: #ffffff;
+                    cursor: pointer;
+                    padding: 0;
+                    align-items: center;
+                    display: flex;
+                }
+
+                .button.mobile-list {
+                    display: none;
                 }
             }
         }
