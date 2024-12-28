@@ -226,6 +226,13 @@
     }
 }
 
+@media screen and (min-width: 992px) {
+    .content .mobile-list,
+    .content .mobile-search-button {
+        display: none;
+    }
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .mobile .content {
         max-width: 1024px;
@@ -475,7 +482,7 @@
 @media screen and (max-width: 575px) {
     .mobile {
         .content {
-            max-width: 767px;
+            max-width: 575px;
             margin: auto 20px;
 
             .header {
@@ -600,10 +607,5 @@
     }
 }
 
-@media screen and (min-width: 992px) {
-    .content .mobile-list,
-    .content .mobile-search-button {
-        display: none;
-    }
-}
+
 

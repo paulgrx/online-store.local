@@ -5,6 +5,8 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         @vite(['resources/scss/form.scss'])
 
@@ -14,11 +16,6 @@
     <body>
         <div class="container">
             <p>Dane płatnika</p>
-            {{--<div class="form">
-                <input type="radio" id="adresCheckbox">
-                <label for="adresCheckbox">Nowy Adres</label>
-            </div>--}}
-
             <form class="data" action="{{route('submit')}}" method="POST">
                 @csrf
                 <div class="fnames"><input type="text" id="name" name="name" placeholder="Imię" required></div>
