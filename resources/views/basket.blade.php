@@ -17,7 +17,7 @@
             <h1 class="basket-title">Koszyk</h1>
             <div class="basket">
                 <div class="row" id="list">
-                    <div class="title-info col-5 col-12"><p>Produkt</p></div>
+                    <div class="title-info col-lg-5 col-md-5 col-sm-5 col-12"><p>Produkt</p></div>
                     <div class="title-info col-lg-2 col-2 d-none d-sm-block"><p>Cena</p></div>
                     <div class="title-info col-lg-2 col-2 d-none d-sm-block"><p>Ilość</p></div>
                     <div class="title-info col-lg-2 col-2 d-none d-sm-block"><p>Razem</p></div>
@@ -30,7 +30,7 @@
                     @foreach($products as $item)
                         <div class="row col-12" id="purchase-data">
                             <div class="overall-info col-11 col-sm-5">
-                                <div class="product-photo col-5 col-sm-6">
+                                <div class="product-photo col-4 col-sm-6">
                                     <img src="images/{{$item->image}}" alt="Photo">
                                 </div>
                                 <div class="short-description col-6 col-sm-6">
@@ -68,18 +68,34 @@
                                 </form>
                             </div>
                         </div>
+                        <div class="mobile-price-summary d-block d-sm-none">
+                            <div class="price">
+                                <p>Cena</p>
+                                <p>{{ number_format($item->price, 2, ',', ' ') }} zł</p>
+                            </div>
+                            <hr>
+                            <div class="count">
+                                <p>Ilość</p>
+                                <p id="product-quantity">{{$item->quantity}}</p>
+                            </div>
+                            <hr>
+                            <div class="final-price">
+                                <p>Razem</p>
+                                <p>{{ number_format($item->final_price, 2, ',', ' ') }} zł</p>
+                            </div>
+                        </div>
                         <hr>
                     @endforeach
                 @endif
                 <div class="summarize">
-                    <div class="col-3 total-count"><p>{{$totalProducts}} PRODUKT(ÓW)</p></div>
+                    <div class="col-3 col-5 total-count"><p>{{$totalProducts}} PRODUKT(ÓW)</p></div>
                     <div class="col-2 total-in-words"><p>RAZEM</p></div>
-                    <div class="col-2 total-price"><p>{{ number_format($totalPrice, 2, ',', ' ') }} zł</p></div>
+                    <div class="col-2 col-5 total-price"><p>{{ number_format($totalPrice, 2, ',', ' ') }} zł</p></div>
                 </div>
             </div>
             <div class="buttons">
                 <a href="{{route('home')}}" class="back-button-link">Wróć do zakupów</a>
-                <a href="{{route('form')}}" class="order-button-link">Do kasy<p>{{ number_format($totalPrice, 2, ',', ' ') }} zł</p></a>
+                <a href="{{route('form')}}" class="order-button-link">Do kasy {{ number_format($totalPrice, 2, ',', ' ') }} zł</a>
             </div>
         </div>
     </body>
