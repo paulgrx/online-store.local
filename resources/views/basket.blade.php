@@ -28,7 +28,7 @@
                     <p>Koszyk jest pusty</p>
                 @else
                     @foreach($products as $item)
-                        <div class="row col-12" id="purchase-data">
+                        <div class="row" id="purchase-data">
                             <div class="overall-info col-11 col-sm-5">
                                 <div class="product-photo col-4 col-sm-6">
                                     <img src="images/{{$item->image}}" alt="Photo">
@@ -88,9 +88,11 @@
                     @endforeach
                 @endif
                 <div class="summarize">
-                    <div class="col-3 col-5 total-count"><p>{{$totalProducts}} PRODUKT(ÓW)</p></div>
-                    <div class="col-2 total-in-words"><p>RAZEM</p></div>
-                    <div class="col-2 col-5 total-price"><p>{{ number_format($totalPrice, 2, ',', ' ') }} zł</p></div>
+                    <div class="row">
+                        <div class="col-5 total-count"><p>{{$totalProducts}} PRODUKT(ÓW)</p></div>
+                        <div class="col-2 total-in-words"><p>RAZEM</p></div>
+                        <div class="col-5 total-price"><p>{{ number_format($totalPrice, 2, ',', ' ') }} zł</p></div>
+                    </div>
                 </div>
             </div>
             <div class="buttons">

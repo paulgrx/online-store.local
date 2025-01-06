@@ -1,6 +1,6 @@
 .box {
     max-width: 1850px;
-    margin: 200px;
+    margin: 100px 200px;
 
     .basket-title {
         text-align: center;
@@ -11,6 +11,11 @@
         border: 1px solid rgba(130,130,130,.3);
         border-radius: 15px;
         margin-bottom: 50px;
+
+            .row {
+                margin-right: 0;
+                margin-left: 0;
+            }
 
         #list {
             text-align: center;
