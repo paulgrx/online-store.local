@@ -11,8 +11,6 @@
 ## Installation
 
 ### **1. Install dependencies**
-Run in termninal:
-
 ```sh
 sudo apt install mysql-server apache2
 sudo apt update
