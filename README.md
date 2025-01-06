@@ -37,7 +37,7 @@ npm install bootstrap
 npm install
 ```
 ### **5. Build frontend**
-
+```sh
 npm run build
 ```
 ### **6. Run project**
