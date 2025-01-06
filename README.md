@@ -44,4 +44,4 @@ npm run build
 ```sh
 php artisan serve
 ```
-Now open http://127.0.0.1:8000 in your browser. 
+Now open http://127.0.0.1 in your browser. 
